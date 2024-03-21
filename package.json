@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "test:e2e:open": "cypress open",
+    "test:e2e:run:all": "cypress run --browser chrome"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "cypress": "^13.6.6",
+    "cypress-mochawesome-reporter": "^3.6.1",
+    "cypress-multi-reporters": "^1.6.3",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.12.0"
+  }
+}
