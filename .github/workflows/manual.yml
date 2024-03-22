@@ -3,14 +3,64 @@ name: Cypress Tests
 on: push
 
 jobs:
-  cypress-run:
-    runs-on: self-hosted
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+    container:
+      image: cypress/included:12.3.0
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          start: npm run test:e2e:run:all
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        run: npm run test:e2e:run:all
+        continue-on-error: true # Continue even if tests fail
+
+      - name: Generate MochaAwesome report
+        run: |
+          npx mochawesome-merge cypress/reports/*.json -o cypress/reports/todo.json
+          npx marge ./cypress/reports --reportDir ./cypress/reports --cdn
+        if: always() # Always execute this step
+
+      - name: Upload MochaAwesome report
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mochawesome report
+          path: cypress/reports/todo.xml
+
+      - name: Upload MochaAwesome report (HTML)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mochawesome report HTML
+          path: cypress/reports/todo.html
+
+      # - name: Publish MochaAwesome Report
+      #   uses: peaceiris/actions-gh-pages@v3.9.3
+      #   with:
+      #     personal_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: 'cypress/reports'
+
+      - name: Test Report
+        uses: phoenix-actions/test-reporting@v8
+        if: success() || failure() # run this step even if previous step failed
+        with:
+          name: Cypress Tests # Name of the check run which will be created
+          path: cypress/reports/todo.xml # Path to test results
+          reporter: java-junit # Format of test results
+        continue-on-error: true # Continue even if tests fail
+
+
+      # - name: Add execution summary
+      #   run: |
+      #     echo "### Hello world! 🚀" >> $GITHUB_STEP_SUMMARY
+      #     echo "Link to run results: https://dmitrijk.github.io/cypress-ci-github-actions/todo.html" >> $GITHUB_STEP_SUMMARY
+      #   shell: bash

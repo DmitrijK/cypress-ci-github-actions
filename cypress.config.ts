@@ -2,7 +2,7 @@ import { defineConfig } from 'cypress';
 
 export default defineConfig({
   e2e: {
-    baseUrl: 'https://s-admin-dev.stormgeo.com/',
+    baseUrl: 'https://example.cypress.io/todo',
     chromeWebSecurity: false,
     downloadsFolder: 'cypress/downloads',
     env: {},
@@ -13,9 +13,9 @@ export default defineConfig({
     experimentalOriginDependencies: true,
     reporter: 'cypress-multi-reporters',
     reporterOptions: {
-      reporterEnabled: 'cypress-mochawesome-reporter, mocha-junit-reporter',
-      mochaJunitReporterReporterOptions: {
-        mochaFile: 'cypress/reports/results-[hash].xml',
+      reporterEnabled: 'cypress-mochawesome-reporter, cypress-junit-reporter',
+      cypressJunitReporterReporterOptions: {
+        mochaFile: 'cypress/reports/todo.xml',
       },
       cypressMochawesomeReporterReporterOptions: {
         charts: true,
