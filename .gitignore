@@ -1,6 +1,6 @@
 # Ignore output directories
-cypress/e2e/reports
-cypress/e2e/screenshots
+cypress/reports
+cypress/screenshots
 
 # Ignore dependencies directories
 node_modules/
