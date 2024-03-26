@@ -31,3 +31,10 @@ jobs:
         with:
           name: my-single-file-artifact
           path: cypress/reports/todo.html
+
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.CYPRESS }}
+          publish_dir: ./public
+
