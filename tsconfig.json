@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": "./",
-    "target": "es2015",
-    "types": ["cypress", "cypress-real-events", "node"],
-    "lib": ["es2018", "es2019", "dom"]
-  }
-}

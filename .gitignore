@@ -1,6 +1,0 @@
-# Ignore output directories
-cypress/reports
-cypress/screenshots
-
-# Ignore dependencies directories
-node_modules/
