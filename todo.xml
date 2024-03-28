@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="11.694999999999999" tests="6" failures="1">
+  <testsuite name="Root Suite" timestamp="2024-03-28T10:06:50" tests="0" file="cypress/e2e/todo.cy.ts" failures="0" time="0">
+  </testsuite>
+  <testsuite name="example to-do app" timestamp="2024-03-28T10:06:50" tests="3" failures="1" time="10.915">
+    <testcase name="example to-do app displays two todo items by default" time="10.327" classname="displays two todo items by default" failure="true" error="true" success="false">
+      <failure message="Timed out retrying after 10000ms: Too many elements found. Found &apos;2&apos;, expected &apos;1&apos;." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Too many elements found. Found '2', expected '1'.
+    at Context.eval (webpack:///./cypress/e2e/todo.cy.ts:24:0)]]></failure>
+    </testcase>
+    <testcase name="example to-do app can add new todo items" time="0.404" classname="can add new todo items" failure="false" error="false" success="true">
+    </testcase>
+    <testcase name="example to-do app can check off an item as completed" time="0.184" classname="can check off an item as completed" failure="false" error="false" success="true">
+    </testcase>
+  </testsuite>
+  <testsuite name="with a checked task" timestamp="2024-03-28T10:07:22" tests="3" failures="0" time="0.78">
+    <testcase name="example to-do app with a checked task can filter for uncompleted tasks" time="0.271" classname="can filter for uncompleted tasks" failure="false" error="false" success="true">
+    </testcase>
+    <testcase name="example to-do app with a checked task can filter for completed tasks" time="0.254" classname="can filter for completed tasks" failure="false" error="false" success="true">
+    </testcase>
+    <testcase name="example to-do app with a checked task can delete all completed tasks" time="0.255" classname="can delete all completed tasks" failure="false" error="false" success="true">
+    </testcase>
+  </testsuite>
+</testsuites>
