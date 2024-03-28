@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="11.512" tests="6" failures="1">
-  <testsuite name="Root Suite" timestamp="2024-03-28T10:13:49" tests="0" file="cypress/e2e/todo.cy.ts" failures="0" time="0">
+<testsuites name="Mocha Tests" time="1.568" tests="6" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-03-28T10:16:43" tests="0" file="cypress/e2e/todo.cy.ts" failures="0" time="0">
   </testsuite>
-  <testsuite name="example to-do app" timestamp="2024-03-28T10:13:49" tests="3" failures="1" time="10.754">
-    <testcase name="example to-do app displays two todo items by default" time="10.209" classname="displays two todo items by default" failure="true" error="true" success="false">
-      <failure message="Timed out retrying after 10000ms: Too many elements found. Found &apos;2&apos;, expected &apos;1&apos;." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Too many elements found. Found '2', expected '1'.
-    at Context.eval (webpack:///./cypress/e2e/todo.cy.ts:24:0)]]></failure>
+  <testsuite name="example to-do app" timestamp="2024-03-28T10:16:43" tests="3" failures="0" time="0.839">
+    <testcase name="example to-do app displays two todo items by default" time="0.357" classname="displays two todo items by default" failure="false" error="false" success="true">
     </testcase>
-    <testcase name="example to-do app can add new todo items" time="0.376" classname="can add new todo items" failure="false" error="false" success="true">
+    <testcase name="example to-do app can add new todo items" time="0.304" classname="can add new todo items" failure="false" error="false" success="true">
     </testcase>
-    <testcase name="example to-do app can check off an item as completed" time="0.169" classname="can check off an item as completed" failure="false" error="false" success="true">
+    <testcase name="example to-do app can check off an item as completed" time="0.178" classname="can check off an item as completed" failure="false" error="false" success="true">
     </testcase>
   </testsuite>
-  <testsuite name="with a checked task" timestamp="2024-03-28T10:14:21" tests="3" failures="0" time="0.758">
+  <testsuite name="with a checked task" timestamp="2024-03-28T10:16:44" tests="3" failures="0" time="0.729">
     <testcase name="example to-do app with a checked task can filter for uncompleted tasks" time="0.248" classname="can filter for uncompleted tasks" failure="false" error="false" success="true">
     </testcase>
-    <testcase name="example to-do app with a checked task can filter for completed tasks" time="0.276" classname="can filter for completed tasks" failure="false" error="false" success="true">
+    <testcase name="example to-do app with a checked task can filter for completed tasks" time="0.242" classname="can filter for completed tasks" failure="false" error="false" success="true">
     </testcase>
-    <testcase name="example to-do app with a checked task can delete all completed tasks" time="0.234" classname="can delete all completed tasks" failure="false" error="false" success="true">
+    <testcase name="example to-do app with a checked task can delete all completed tasks" time="0.239" classname="can delete all completed tasks" failure="false" error="false" success="true">
     </testcase>
   </testsuite>
 </testsuites>
