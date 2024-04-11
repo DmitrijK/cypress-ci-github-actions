@@ -1,6 +1,8 @@
 name: Cypress Tests
 
-on: push
+on:
+  schedule:
+    - cron: '7 13 * * *' # Runs at 16:05 Vilnius time (13:05 UTC)
 
 jobs:
   cypress-tests:
